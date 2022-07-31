@@ -1,0 +1,60 @@
+// Values
+//color
+$color-black : #000;
+$color-first : rgb(207, 207, 175);
+$color-second : #d4b54c;
+$color-tired : #bbb;
+$color-dark: rgba(32, 27, 27, 0.959);
+$color-white: #fff;
+
+//font
+
+$font-Niconne : "Niconne";
+$font-danc : "Dancing Script",cursive;
+$font-jos : 'Josefin Sans',Sans-serif;
+$font-sahel: sahel, Tahoma;
+$font-Nastaliq: Nastaliq, Tahoma;
+
+@font-face {
+    font-family: 'Niconne';
+    src: url('../fonts/niconne-v10-latin-regular.eot') format('eot');
+    src: url('../fonts/niconne-v10-latin-regular.ttf') format('ttf');
+    src: url('../fonts/niconne-v10-latin-regular.woff') format('woff');
+}
+
+@font-face{
+    font-family: sahel;
+    src: url("../fonts_farsi/Sahel.eot") format('eot');
+    src: url("../fonts_farsi/Sahel.ttf") format('ttf');
+    src: url("../fonts_farsi/Sahel.woff") format('woff');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Nastaliq;
+    src: url("../fonts_farsi/IranNastaliq.ttf") format('ttf');
+    font-weight: normal;
+}
+//////////////////////////////////////////////////////////////
+
+// Mixins
+@mixin flexlayout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@mixin text-style {
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+@mixin centering($topValue) {
+    position: absolute;
+    top: $topValue;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+// Other

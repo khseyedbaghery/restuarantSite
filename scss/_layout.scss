@@ -1,0 +1,325 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    //background-color: $color-dark;
+}
+
+.navbar {
+    background-color: $color-dark;
+    //position: relative;
+
+    &-chechbox {
+        position: fixed;
+        z-index: 25;
+    }
+
+    &-nagevation {
+
+        width: 100%;
+        // height: 500px;
+        display: flex;
+        position: relative;
+
+        &-left {
+            width: 50%;
+            height: 100%;
+            background-color: rgb(48, 42, 42);
+            position: fixed;
+            left: -50%;
+            z-index: 20;
+            transition: left 0.5s;
+
+            @media (max-width : 900px) {
+                display: none;
+            }
+        }
+
+        &-right {
+            width: 50%;
+            height: 100%;
+            background-color: rgb(34, 30, 30);
+            position: fixed;
+            right: -50%;
+            z-index: 20;
+            transition: right 0.5s;
+
+        }
+    }
+}
+
+.navbar-chechbox:checked~.hamburger-menu {
+
+    .hamburger-menu-label {
+
+        transform: rotateZ(90deg);
+
+    }
+
+    .hamburger-menu-line1 {
+        transform: rotateZ(-40deg);
+    }
+
+    .hamburger-menu-line2 {
+        opacity: 0;
+    }
+
+    .hamburger-menu-line3 {
+        transform: rotateZ(40deg);
+    }
+
+}
+
+.navbar-chechbox:checked~.navbar-nagevation .navbar-nagevation-left {
+
+    left: 0;
+}
+
+.navbar-chechbox:checked~.navbar-nagevation .navbar-nagevation-right {
+
+    right: 0;
+
+    @media (max-width : 900px) {
+        //right: -100%;
+        width: 100%;
+
+    }
+}
+
+
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba($color-black, 0.8), rgba($color-black, 0.1)), url("../images/bg.jpeg") center no-repeat;
+    background-size: cover;
+
+    .brand {
+        @include centering(15%);
+        display: flex;
+        align-items: center;
+    }
+
+    &-banner {
+        text-align: center;
+        @include centering(45%);
+    }
+}
+
+.about-us {
+    @include flexlayout;
+    height: 68vh;
+    background-color: $color-dark;
+
+    @media (max-width : 1000px) {
+        height: 60vh;
+
+    }
+
+    &-left {
+        width: 40%;
+
+        img {
+            width: 100%;
+            opacity: 0.7;
+            align-items: center;
+        }
+
+        @media (max-width : 1000px) {
+            display: none;
+
+        }
+
+    }
+
+    &-right {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 25px;
+
+        @media (max-width : 1000px) {
+            width: 100%;
+
+        }
+
+        .stars {
+            margin: 15px 0;
+
+            @media (max-width : 1000px) {
+                margin: 30px 0;
+
+            }
+        }
+
+        .star {
+            color: $color-second;
+            font-size: 17px;
+
+            @media (max-width : 1000px) {
+                font-size: 15px;
+
+            }
+        }
+
+        .main-heading {
+            font-size: 60px;
+            margin-bottom: 30px;
+
+            @media (max-width : 1600px) {
+                font-size: 50px;
+
+            }
+
+            @media (max-width : 1400px) {
+                font-size: 40px;
+
+            }
+
+            @media (max-width : 800px) {
+                font-size: 35px;
+
+            }
+        }
+
+        .sub-heading {
+            font-size: 30px;
+            margin-bottom: 10px;
+
+            @media (max-width : 1600px) {
+                font-size: 25px;
+
+            }
+
+            @media (max-width : 1400px) {
+                font-size: 20px;
+
+            }
+
+            @media (max-width : 1400px) {
+                font-size: 15px;
+
+            }
+        }
+
+        .description {
+            direction: rtl;
+            text-align: justify;
+            font-size: 17x;
+            font-family: $font-Nastaliq;
+            color: $color-first;
+            text-indent: 25px;
+            line-height: 1.7;
+
+            @media (max-width : 1000px) {
+                margin: 0px 20px;
+
+            }
+
+            @media (max-width : 800px) {
+                font-size: 14px;
+
+            }
+        }
+    }
+}
+
+.gallery-container {
+    background-color: $color-dark;
+
+    .card-gallery {
+        display: flex;
+        //width: 100%;
+        //height: 100;
+        justify-content: center;
+        text-align: center;
+        flex-wrap: wrap;
+
+    }
+}
+
+.footer {
+    background-color: $color-dark;
+    width: 100%;
+    //height: 250px;
+
+
+    &-header {
+        @include flexlayout;
+        padding: 30px 0;
+
+    }
+
+    &-social-media {
+        @include flexlayout;
+        margin: 30px 0;
+        //flex-direction: row;
+
+        .social-icon {
+            list-style: none;
+            display: flex;
+
+
+            .icon {
+                font-size: 35px;
+                color: $color-white;
+                padding-right: 35px;
+                text-decoration: none;
+                transition: color 1s;
+
+                &:hover {
+                    color: $color-second;
+                }
+            }
+
+        }
+    }
+
+    .main-name {
+
+        @media (max-width : 1300px) {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width : 800px) {
+            font-size: 36px;
+        }
+    
+        @media (max-width : 600px) {
+            font-size: 25px;
+        }
+    }
+
+    .logo {
+
+        @media (max-width : 1300px) {
+            font-size: 50px;
+            width: 95px;
+            height: 95px;
+        }
+
+        @media (max-width : 800px) {
+            font-size: 40px;
+            width: 85px;
+            height: 85px;
+        }
+    
+        @media (max-width : 600px) {
+            font-size: 30px;
+            width: 75px;
+            height: 75px;
+        }
+    }
+
+    &-copyright {
+        color: $color-first;
+        direction: rtl;
+        text-align: center;
+        font-size: 15px;
+        font-family: $font-Nastaliq;
+        padding: 25px 0;
+    }
+}
